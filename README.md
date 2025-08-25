@@ -32,6 +32,7 @@ A complete Go web service that demonstrates integration with Redis (for caching)
 | POST | `/api/v1/users` | Create a new user |
 | GET | `/api/v1/users` | Get all users |
 | GET | `/api/v1/users/{id}` | Get user by ID (cached) |
+| GET | `/api/v1/users/search?name=...&email=...` | Search users by name/email (cached) |
 | PUT | `/api/v1/users/{id}` | Update user by ID |
 | DELETE | `/api/v1/users/{id}` | Delete user by ID |
 
@@ -133,6 +134,11 @@ curl http://localhost:8080/api/v1/users
 ### Get a specific user (cached):
 ```bash
 curl http://localhost:8080/api/v1/users/1
+```
+
+### Search users by name/email (cached):
+```bash
+curl http://localhost:8080/api/v1/users/search?name=John&email=example.com
 ```
 
 ### Update a user:

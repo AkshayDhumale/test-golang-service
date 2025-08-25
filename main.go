@@ -294,6 +294,7 @@ func main() {
 	api := router.PathPrefix("/api/v1").Subrouter()
 	api.HandleFunc("/users", service.createUser).Methods("POST")
 	api.HandleFunc("/users", service.listUsers).Methods("GET")
+	api.HandleFunc("/users/search", service.searchUsers).Methods("GET")
 	api.HandleFunc("/users/{id}", service.getUser).Methods("GET")
 	api.HandleFunc("/users/{id}", service.updateUser).Methods("PUT")
 	api.HandleFunc("/users/{id}", service.deleteUser).Methods("DELETE")
